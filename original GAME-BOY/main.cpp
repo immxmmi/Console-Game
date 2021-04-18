@@ -17,7 +17,7 @@ int main() {
 
 	Player play;
 
-	play.test();
+	play.setControl();
 
 
 

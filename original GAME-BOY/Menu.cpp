@@ -5,6 +5,7 @@
 #include <iostream>
 
 Field field;
+Player player;
 
 //PRINT  MENU############################
 void Menu::print_Menu()
@@ -29,14 +30,15 @@ void Menu::print_settingMenu()
 {
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << std::endl << std::endl << std::endl;
-	std::cout << "					************************************" << std::endl;
-	std::cout << "					*              SETTING             *" << std::endl;
-	std::cout << "					************************************" << std::endl;
-	std::cout << "					**                                **" << std::endl;
-	std::cout << "					**    h ................ HEIGHT   **" << std::endl;
-	std::cout << "					**    w ................. WIDTH   **" << std::endl;
-	std::cout << "					**    q .................. BACK   **" << std::endl;
-	std::cout << "					**                                **" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					**             SETTING             **" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					**    c ................ CONTROL   **" << std::endl;
+	std::cout << "					**    h ................  HEIGHT   **" << std::endl;
+	std::cout << "					**    w .................  WIDTH   **" << std::endl;
+	std::cout << "					**    q ..................  BACK   **" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
 	std::cout << "					************************************" << std::endl;
 	std::cout << "					*              Momo                *" << std::endl;
 	std::cout << "					************************************" << std::endl;
@@ -50,7 +52,7 @@ char Menu::getSettingInput() {
 		std::cin >> input;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	} while (input != 'h' && input != 'w' && input != 'q');
+	} while (input != 'h' && input != 'w' && input != 'c' && input != 'q');
 	return input;
 }
 char Menu::getMenuInput() {
@@ -72,6 +74,7 @@ void Menu::settingMenu() {
 		this->print_settingMenu();
 		input = this->getSettingInput();
 		switch (input) {
+		case 'c': {player.setControl(); break; }
 		case 'h': {field.setHeight(); break; }
 		case 'w': {field.setWidth(); break; }
 		}

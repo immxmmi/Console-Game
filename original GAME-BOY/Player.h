@@ -22,6 +22,10 @@ private:
 	int score;
 	int scoreLimit;
 	bool gameOver;
+	char cont_down = 's';
+	char cont_up = 'w';
+	char cont_right = 'd';
+	char cont_left = 'a';
 	enum nav { STOP = 0, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
 
@@ -31,7 +35,21 @@ public:
 	void action();
 	void printField();
 	void input();
+	void setControl();
+	char getConUp();
+	char getConDown();
+	char getConRight();
+	char getConLeft();
+
+	void setConUp();
+	void setConDown();
+	void setConRight();
+	void setConLeft();
+
+
+	
 	void test();
+	void print_controlMenu();
 
 
 
