@@ -29,27 +29,29 @@ private:
 	enum nav { STOP = 0, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
 
-public:
-
-	Player();
-	void action();
-	void printField();
-	void input();
-	void setControl();
 	char getConUp();
 	char getConDown();
 	char getConRight();
 	char getConLeft();
-
 	void setConUp();
 	void setConDown();
 	void setConRight();
 	void setConLeft();
-
-
-	
-	void test();
 	void print_controlMenu();
+
+	void action();
+	void printField();
+	void input();
+	void Load();
+
+public:
+
+	Player();
+
+
+	void setControl();
+	void test();
+
 
 
 

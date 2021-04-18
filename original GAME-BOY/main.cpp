@@ -12,12 +12,10 @@ int main() {
 	//Player play;
 	//play.test();
 
-	//Menu navigation;
-	//navigation.menu();
+	Menu navigation;
+	navigation.menu();
 
-	Player play;
-
-	play.setControl();
+	//play.setControl();
 
 
 
