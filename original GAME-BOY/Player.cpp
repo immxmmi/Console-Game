@@ -1,7 +1,5 @@
 #include "Player.h"
 
-
-
 Player::Player() {
 
 	this->Name = "TEST";
@@ -16,7 +14,6 @@ Player::Player() {
 	this->gameOver = false;
 
 }
-
 void Player::action()
 {
 	switch (this->control)
@@ -73,7 +70,6 @@ void Player::input() {
 		}
 	}
 }
-
 void Player::test()
 {
 	this->Load();
@@ -93,7 +89,6 @@ void Player::printField() {
 		std::cout << std::endl;
 	}
 }
-
 void Player::Load()
 {
 	system("cls");
@@ -101,13 +96,6 @@ void Player::Load()
 	this->action();
 	printField();
 }
-
-
-
-
-
-
-
 
 //###################### Control #######################\\
 
@@ -168,7 +156,6 @@ void Player::setControl()
 	} while (Key != 'q');
 
 }
-
 void Player::setConUp() {
 	char input;
 
@@ -217,7 +204,6 @@ void Player::setConLeft() {
 	} while (input == 'q' || input == this->getConDown() || input == this->getConUp() || input == this->getConRight());
 	this->cont_left = input;
 }
-
 // PRINT
 void Player::print_controlMenu() {
 	system("cls");

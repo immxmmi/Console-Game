@@ -17,7 +17,7 @@ private:
 	//FIELD
 	void print_widthMenu();
 	void print_heightMenu();
-
+	char askMe(char input);
 
 public:
 	char field[100][100] = {};
@@ -25,7 +25,7 @@ public:
 	void printField();
 	void drawField();
 
-	char askMe(char input);
+
 
 
 	void setHeight();

@@ -27,6 +27,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="te.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -36,6 +39,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="te.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
