@@ -1,41 +1,45 @@
 #include "Field.h"
 Field::Field() {
+	this->y_edge = 2;
+	this->x_edge = 31;
+	this->min_Width = 10;
+	this->max_Width = 60;
+	this->min_Height = 10;
+	this->max_Height = 30;
 	this->height = 20 + this->y_edge;	// default Y - WINDOW SIZE 
 	this->width = 46 + this->x_edge;   // default X - WINDOW SIZE
+
 }
 void Field::drawField() {
 	for (int y = 0; y <= this->height; y++) {
 		for (int x = 0; x <= this->width; x++) {
 
-			this->field[y][x] = ' ';
+			this->setSpace(x, y, ' ');
 
 			if (x < x_edge - 1) {
-				this->field[y][x] = ' ';
+				this->setSpace(x, y, ' ');
 			}
 			else {
 
 				if (y <= this->height && y > y_edge && x == x_edge - 1) {
-					this->field[y][x] = '#';
+					this->setSpace(x,y,'#');
 				}
 
 				if (y == this->height) {
-					this->field[y][x] = '#';
+					this->setSpace(x, y, '#');
 				}
 
 				if (y == y_edge) {
-					this->field[y][x] = '#';
+					this->setSpace(x, y, '#');
 				}
 
 				if (y <= this->height && y > y_edge && x == this->width)
-					this->field[y][x] = '#';
+					this->setSpace(x, y, '#');
 			}
 		}
 	}
 }
-
-
-
-char Field::askMe(char input) {
+char Field::inputChange(char input) {
 	do {
 		std::cin >> input;
 		std::cin.clear();
@@ -45,51 +49,48 @@ char Field::askMe(char input) {
 
 	return input;
 }
+void Field::setHeight(int check) {
+
+	if (check == 0) {
+		int currentHeight = this->height;
+		char input = 'y';
 
 
-
-void Field::setHeight() {
-	int currentHeight = this->height;
-	char input = 'y';
-
-
-	do {
-		this->print_heightMenu();
-		std::cout << "Do you want to change the height? y/n" << std::endl;
-		input = this->askMe(input);
-		if (input == 'y') {
+		do {
 			this->print_heightMenu();
-			std::cout << "NEW HEIGHT: ";
-			do {
-				std::cin >> currentHeight;
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Do you want to change the height? y/n" << std::endl;
+			input = this->inputChange(input);
+			if (input == 'y') {
+				this->print_heightMenu();
+				std::cout << "NEW HEIGHT: ";
+				do {
+					std::cin >> currentHeight;
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-				if (currentHeight > this->max_Height) {
-					std::cout << "too BIG" << std::endl;
-				}
+					if (currentHeight > this->max_Height) {
+						std::cout << "too BIG" << std::endl;
+					}
 
-				if (currentHeight < this->min_Height) {
-					std::cout << "too SMALL" << std::endl;
-				}
+					if (currentHeight < this->min_Height) {
+						std::cout << "too SMALL" << std::endl;
+					}
 
-			} while (currentHeight > this->max_Height || currentHeight < this->min_Height);
-			this->height = currentHeight + this->y_edge;
-		}
-	} while (input != 'n');
+				} while (currentHeight > this->max_Height || currentHeight < this->min_Height);
+				this->height = currentHeight + this->y_edge;
+			}
+		} while (input != 'n');
+	}else{ this->height = check; }
 }
-
-
-
-
-void Field::setWidth() {
+void Field::setWidth(int check) {
+	if (check == 0) {
 	int currentWidth = this->width;
 	char input = 'y';
 
 	do {
 		this->print_widthMenu();
 		std::cout << "Do you want to change the width? y/n" << std::endl;
-		input = this->askMe(input);
+		input = this->inputChange(input);
 		if (input == 'y') {
 			this->print_widthMenu();
 			std::cout << "NEW WIDTH: ";
@@ -111,10 +112,8 @@ void Field::setWidth() {
 		}
 	} while (input != 'n');
 }
-
-
-
-
+else { this->height = check; }
+}
 
 int Field::getWidth()
 {
@@ -169,4 +168,14 @@ void Field::print_widthMenu() {
 	std::cout << "					*               Momo               *" << std::endl;
 	std::cout << "					************************************" << std::endl;
 }
+
+void Field::setSpace(int x, int y, char symbol) {
+	this->field[y][x] = symbol;
+}
+
+char Field::getSpace(int x, int y) {
+	return this->field[y][x];
+}
+
+
 

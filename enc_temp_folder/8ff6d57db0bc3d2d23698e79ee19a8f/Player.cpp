@@ -17,6 +17,9 @@ Player::Player() {
 void Player::action()
 {
 
+	field->setSpace(34, 20, '#');
+	field->setSpace(30, 10, ' ');
+
 	switch (this->control)
 	{
 

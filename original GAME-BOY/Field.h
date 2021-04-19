@@ -5,35 +5,48 @@ class Field
 private:
 	//WIDTH
 	int width;
-	int min_Width = 10;
-	int max_Width = 60;
+	int min_Width;
+	int max_Width;
 	//HEIGHT
 	int height;
-	int min_Height = 10;
-	int max_Height = 30;
+	int min_Height;
+	int max_Height;
 	//EDGE
-	int y_edge = 2;
-	int x_edge = 31;
-	//FIELD
+	int y_edge;
+	int x_edge;
+	//PRINT
 	void print_widthMenu();
 	void print_heightMenu();
-	char askMe(char input);
+	char inputChange(char input);
 
 public:
-	char field[100][100] = {};
+
+	//GENERAL
 	Field();
-	void printField();
-	void drawField();
+	char field[100][100] = {};
 
 
-
-
-	void setHeight();
-	void setWidth();
+	//SETTER
+	void setSpace(int x, int y, char symbol);
+	void setHeight(int check);
+	void setWidth(int check);
+	//GETTER
 	int getWidth();
 	int getHeight();
 	int getX_edge();
 	int getY_edge();
+	char getSpace(int x, int y);
+
+	//ACTION
+	void drawField();
+
+	//PRINTER
+	void printField();
+
+
+
+
+
 
 };
 
