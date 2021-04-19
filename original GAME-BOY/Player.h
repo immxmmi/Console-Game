@@ -4,13 +4,12 @@
 #include <conio.h>
 #include <time.h>
 #include "Field.h"
+#include "Level.h"
 #include "te.h"
 
 
-class Player
+class Player:Level
 {
-	Field* field = new Field(); // FIELD --> POINTER
-	te* level1 = new te(); // FIELD --> POINTER
 
 private:
 
@@ -40,7 +39,6 @@ private:
 	void setConRight();
 	void setConLeft();
 	void print_controlMenu();
-	void Mauer(int index, int index2, int space, int limit);
 	void action();
 	void input();
 	void Load();
@@ -49,7 +47,8 @@ public:
 
 	Player();
 
-
+	void setHeight2();
+	void setWidth2();
 	void setControl();
 	void test();
 

@@ -2,6 +2,7 @@
 Field::Field() {
 	this->y_edge = 2;
 	this->x_edge = 31;
+	this->wall = 254;
 	this->min_Width = 10;
 	this->max_Width = 60;
 	this->min_Height = 10;
@@ -22,19 +23,19 @@ void Field::drawField() {
 			else {
 
 				if (y <= this->height && y > y_edge && x == x_edge - 1) {
-					this->setSpace(x,y,'#');
+					this->setSpace(x,y, 254);
 				}
 
 				if (y == this->height) {
-					this->setSpace(x, y, '#');
+					this->setSpace(x, y, 254);
 				}
 
 				if (y == y_edge) {
-					this->setSpace(x, y, '#');
+					this->setSpace(x, y, 254);
 				}
 
 				if (y <= this->height && y > y_edge && x == this->width)
-					this->setSpace(x, y, '#');
+					this->setSpace(x, y, 254);
 			}
 		}
 	}

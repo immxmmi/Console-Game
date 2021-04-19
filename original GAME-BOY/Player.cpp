@@ -7,8 +7,8 @@ Player::Player() {
 	this->charakter = 'X';
 	this->level = 0;
 	this->life = 0;
-	this->x = field->getX_edge();
-	this->y = field->getHeight() - 1;
+	this->x = this->getX_edge();
+	this->y = this->getHeight() - 1;
 	this->score = 0;
 	this->scoreLimit = 200;
 	this->gameOver = false;
@@ -20,20 +20,20 @@ void Player::action()
 	switch (this->control)
 	{
 
-	case LEFT:if (field->getSpace(this->x - 1, this->y) != '#') { this->x--; }; control = STOP; break;
+	case LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control = STOP; break;
 
 
-	case RIGHT:if (field->getSpace(this->x + 1, this->y) != '#') { this->x++; }; control = STOP; break;
+	case RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = STOP; break;
 
 
-	case UP:if (field->getSpace(this->x, this->y - 1) != '#') { this->y--; }; control = STOP; break;
+	case UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control = STOP; break;
 
-	case DOWN:if (field->getSpace(this->x, this->y + 1) != '#') { this->y++; }; control = STOP; break;
+	case DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control = STOP; break;
 
 	default:break;
 	}
 
-	field->setSpace(this->x, this->y, this->charakter);
+	this->setSpace(this->x, this->y, this->charakter);
 
 
 }
@@ -74,47 +74,20 @@ void Player::test()
 	this->gameOver = false;
 	system("cls");
 }
-
-
-void Player::Mauer(int index, int index2, int space, int limit) {
-
-	for (int i = 0; i < limit; i++) {
-		for (int y = field->getHeight() - 1; y > field->getY_edge() + 1; y--)
-			for (int x = field->getX_edge() + index; x < field->getX_edge() + index2; x++) {
-				field->setSpace(x, y, '#');
-			}
-
-		index += space;
-		index2 += space;
-
-
-		for (int y = field->getHeight() - 2; y > field->getY_edge(); y--)
-			for (int x = field->getX_edge() + index; x < field->getX_edge() + index2; x++) {
-				field->setSpace(x, y, '#');
-			}
-		index += space;
-		index2 += space;
-	}
-}
-
 void Player::Load()
 {
 	system("cls");
-	field->drawField();
-	this->Mauer(2,3,4,4);
+	this->drawField();
+	this->Wall(1,2,4,1);
 	this->action();
-	field->printField();
+	this->printField();
 }
-
-
-
-
-
-
-
-
-
-
+void Player::setHeight2() {
+	this->setHeight(0);
+}
+void Player::setWidth2() {
+	this->setWidth(0);
+}
 
 //###################### Control #######################\\
 
@@ -243,3 +216,4 @@ void Player::print_controlMenu() {
 	std::cout << "					*                Momo              *" << std::endl;
 	std::cout << "					************************************" << std::endl;
 }
+

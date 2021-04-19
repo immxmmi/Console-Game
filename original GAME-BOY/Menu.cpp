@@ -75,8 +75,8 @@ void Menu::settingMenu() {
 		input = this->getSettingInput();
 		switch (input) {
 		case 'c': {player.setControl(); break; }
-		case 'h': {field.setHeight(0); break; }
-		case 'w': {field.setWidth(0); break; }
+		case 'h': {player.setHeight2(); break; }
+		case 'w': {player.setWidth2(); break; }
 		}
 
 

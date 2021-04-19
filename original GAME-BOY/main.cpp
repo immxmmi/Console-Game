@@ -13,8 +13,10 @@ int main() {
 	//Player play;
 	//play.test();
 
+
 	Menu navigation;
 	navigation.menu();
+
 
 	//play.setControl();
 

@@ -8,6 +8,7 @@ private:
 	int width;
 	int min_Width;
 	int max_Width;
+
 	//HEIGHT
 	int height;
 	int min_Height;
@@ -23,6 +24,7 @@ private:
 
 
 public:
+	char wall;
 	int getY_edge();
 	int getX_edge();
 	//GENERAL
@@ -40,7 +42,6 @@ public:
 	void drawField();
 	//PRINTER
 	void printField();
-
 
 
 
