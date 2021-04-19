@@ -74,20 +74,36 @@ void Player::test()
 	this->gameOver = false;
 	system("cls");
 }
-void Player::printField() {
-	for (int y = 0; y <= field->getHeight(); y++) {
-		for (int x = 0; x <= field->getWidth(); x++) {
-			std::cout << field->field[y][x];
-		}
-		std::cout << std::endl;
+
+
+void Player::Mauer(int index, int index2, int space, int limit) {
+
+	for (int i = 0; i < limit; i++) {
+		for (int y = field->getHeight() - 1; y > field->getY_edge() + 1; y--)
+			for (int x = field->getX_edge() + index; x < field->getX_edge() + index2; x++) {
+				field->setSpace(x, y, '#');
+			}
+
+		index += space;
+		index2 += space;
+
+
+		for (int y = field->getHeight() - 2; y > field->getY_edge(); y--)
+			for (int x = field->getX_edge() + index; x < field->getX_edge() + index2; x++) {
+				field->setSpace(x, y, '#');
+			}
+		index += space;
+		index2 += space;
 	}
 }
+
 void Player::Load()
 {
 	system("cls");
 	field->drawField();
+	this->Mauer(2,3,4,4);
 	this->action();
-	printField();
+	field->printField();
 }
 
 

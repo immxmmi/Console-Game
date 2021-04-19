@@ -132,7 +132,6 @@ int Field::getY_edge()
 	return this->y_edge;
 }
 void Field::printField() {
-	this->drawField();
 	for (int y = 0; y <= this->height; y++) {
 		for (int x = 0; x <= this->width; x++) {
 			std::cout << this->field[y][x];

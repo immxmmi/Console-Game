@@ -3,6 +3,7 @@
 class Field
 {
 private:
+	char field[100][100] = {};
 	//WIDTH
 	int width;
 	int min_Width;
@@ -19,13 +20,13 @@ private:
 	void print_heightMenu();
 	char inputChange(char input);
 
-public:
 
+
+public:
+	int getY_edge();
+	int getX_edge();
 	//GENERAL
 	Field();
-	char field[100][100] = {};
-
-
 	//SETTER
 	void setSpace(int x, int y, char symbol);
 	void setHeight(int check);
@@ -33,13 +34,10 @@ public:
 	//GETTER
 	int getWidth();
 	int getHeight();
-	int getX_edge();
-	int getY_edge();
 	char getSpace(int x, int y);
 
 	//ACTION
 	void drawField();
-
 	//PRINTER
 	void printField();
 
