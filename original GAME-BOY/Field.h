@@ -25,6 +25,8 @@ public:
 	void printField();
 	void drawField();
 
+	char askMe(char input);
+
 
 	void setHeight();
 	void setWidth();

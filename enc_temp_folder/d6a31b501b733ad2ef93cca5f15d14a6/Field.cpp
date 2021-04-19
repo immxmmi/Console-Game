@@ -57,8 +57,8 @@ void Field::setHeight() {
 		this->print_heightMenu();
 		std::cout << "Do you want to change the height? y/n" << std::endl;
 		input = this->askMe(input);
+
 		if (input == 'y') {
-			this->print_heightMenu();
 			std::cout << "NEW HEIGHT: ";
 			do {
 				std::cin >> currentHeight;
@@ -76,6 +76,7 @@ void Field::setHeight() {
 			} while (currentHeight > this->max_Height || currentHeight < this->min_Height);
 			this->height = currentHeight + this->y_edge;
 		}
+
 	} while (input != 'n');
 }
 
