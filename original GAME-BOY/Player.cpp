@@ -17,7 +17,6 @@ Player::Player() {
 	this->cont_right = 'd';
 	this->cont_left  = 'a';
 }
-
 void Player::action()
 {
 	switch (this->control)
@@ -29,6 +28,7 @@ void Player::action()
 		default:break;
 	}
 	this->setSpace(this->x, this->y, this->charakter);
+	//if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver == true; }
 }
 void Player::input() {
 	if (_kbhit())
@@ -62,24 +62,23 @@ void Player::start()
 	this->Load();
 	while (this->gameOver != true) {
 		this->input();
-
+		if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver == true; }
 	}
 	this->gameOver = false;
 	system("cls");
 }
 void Player::Load()
 {
-	system("cls");
-	this->drawField();
-	//this->Wall(1,2,4,1);
-	this->LevelMenu(1);
 
+		system("cls");
+		this->drawField();
+		//this->Wall(1,2,4,1);
+		this->LevelMenu(1);
 
-	this->action();
-	this->printField();
+		this->action();
+		this->printField(); 
+	
 }
-
-
 void Player::Settings(char input) 
 {
 	switch (input) {
@@ -89,9 +88,6 @@ void Player::Settings(char input)
 		case 'p' :this->setCharacter(1);
 	}
 }
-
-
-
 
 
 //##################### Charakter #######################\\
@@ -157,13 +153,6 @@ void Player::print_characterMenu(int player)
 	std::cout << std::endl << std::endl;
 	std::cout << "Character:  ";
 };
-
-
-
-
-
-
-
 
 //###################### Control #######################\\
 

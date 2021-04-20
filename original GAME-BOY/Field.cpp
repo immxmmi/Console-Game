@@ -22,21 +22,25 @@ void Field::drawField() {
 				this->setSpace(x, y, ' ');
 			}
 			else {
-
+				// LEFT WALL
 				if (y <= this->height && y > y_edge && x == x_edge - 1) {
 					this->setSpace(x,y, this->wall);
 				}
 
+				// DOWN WALL
 				if (y == this->height) {
 					this->setSpace(x, y, this->wall);
 				}
 
+				// UP WALL
 				if (y == y_edge) {
 					this->setSpace(x, y, this->wall);
 				}
 
+				// RIGHT WALL
 				if (y <= this->height && y > y_edge && x == this->width)
 					this->setSpace(x, y, this->wall);
+					if (y == this->height / 2 && x == this->width) {this->setSpace(x, y, ' ');}
 			}
 		}
 	}
@@ -173,7 +177,6 @@ void Field::print_widthMenu() {
 void Field::setSpace(int x, int y, char symbol) {
 	this->field[y][x] = symbol;
 }
-
 char Field::getSpace(int x, int y) {
 	return this->field[y][x];
 }

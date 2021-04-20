@@ -25,19 +25,20 @@ void Level::LevelMenu(int level)
 {
 	switch (level)
 	{
-	case 1: Level1(); break;
-	case 2: Level2(); break;
-	case 3: Level3(); break;
-	case 4: Level4(); break;
-	default:
-		break;
+		case 1: Level1(); break;
+		case 2: Level2(); break;
+		case 3: Level3(); break;
+		case 4: Level4(); break;
+		default:break;
 	}
 }
 
 void Level::Level1()
 {
-	setWidth(30);
-	setHeight(30);
+	//setWidth(30);
+	//setHeight(30);
+	this->Wall(1,2,4,1);
+
 }
 void Level::Level2()
 {
