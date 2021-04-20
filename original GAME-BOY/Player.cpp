@@ -4,7 +4,10 @@ Player::Player() {
 
 	this->Name = "TEST";
 	this->players = false;
-	this->charakter = 'X';
+	this->charakter = 176;
+	//this->charakter = 177;
+	//this->charakter = 178;
+	//this->charakter = 219;
 	this->level = 0;
 	this->life = 0;
 	this->x = this->getX_edge();
@@ -91,6 +94,8 @@ void Player::setWidth2() {
 
 //###################### Control #######################\\
 
+
+
 // GETTER
 char Player::getConUp()
 {
@@ -148,6 +153,67 @@ void Player::setControl()
 	} while (Key != 'q');
 
 }
+void Player::setCharaker()
+{
+	char Charakter1 = 176;
+	char Charakter2 = 219;
+	char Charakter3 = 178;
+	char Charakter4 = 177;
+	char Charakter5 = 245;
+	char Charakter6 = 169;
+	char Charakter7 = 184;
+	char input = 'w';
+
+
+	do {
+		system("cls");
+		this->print_charakterMenu();
+		std::cin >> input;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		switch (input)
+		{
+			case 'a': 	this->charakter = Charakter1; break;
+			case 'b': 	this->charakter = Charakter1; break;
+			case 'c': 	this->charakter = Charakter1; break;
+			case 'd': 	this->charakter = Charakter1; break;
+			case 'e': 	this->charakter = Charakter1; break;
+			case 'f': 	this->charakter = Charakter1; break;
+			case 'g': 	this->charakter = Charakter1; break;
+			default: break;
+		}
+	} while (input != 'a' && input != 'b' && input != 'c' && input != 'd' && input != 'e' && input != 'f' && input != 'g' && input != 'q');
+
+}
+void Player::print_charakterMenu() 
+{
+	char Charakter1 = 176;
+	char Charakter2 = 219;
+	char Charakter3 = 178;
+	char Charakter4 = 177;
+	char Charakter5 = 245;
+	char Charakter6 = 169;
+	char Charakter7 = 184;
+	std::cout << std::endl << std::endl << std::endl;
+	std::cout << std::endl << std::endl << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					**           CHARAKTER 1           **" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					**       a ............... "<< Charakter1 << "       **" << std::endl;
+	std::cout << "					**       b ............... "<< Charakter2 << "       **" << std::endl;
+	std::cout << "					**       c ............... "<< Charakter3 << "       **" << std::endl;
+	std::cout << "					**       d ............... "<< Charakter4 << "       **" << std::endl;
+	std::cout << "					**       e ............... "<< Charakter5 << "       **" << std::endl;
+	std::cout << "					**       f ............... "<< Charakter6 << "       **" << std::endl;
+	std::cout << "					**       g ............... "<< Charakter7 << "       **" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					*              Momo                 *" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << std::endl << std::endl;
+	std::cout << "Chose a charakter:";
+};
 void Player::setConUp() {
 	char input;
 

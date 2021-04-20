@@ -1,10 +1,8 @@
 #include "Menu.h"
-#include "Menu.h"
-#include "Field.h"
 #include "Player.h"
 #include <iostream>
 
-Field field;
+
 Player player;
 
 //PRINT  MENU############################
@@ -39,9 +37,9 @@ void Menu::print_settingMenu()
 	std::cout << "					**    w .................  WIDTH   **" << std::endl;
 	std::cout << "					**    q ..................  BACK   **" << std::endl;
 	std::cout << "					**                                 **" << std::endl;
-	std::cout << "					************************************" << std::endl;
-	std::cout << "					*              Momo                *" << std::endl;
-	std::cout << "					************************************" << std::endl;
+	std::cout << "					*************************************" << std::endl;
+	std::cout << "					*              Momo                 *" << std::endl;
+	std::cout << "					*************************************" << std::endl;
 }
 //#######################################
 
@@ -94,8 +92,8 @@ void Menu::menu()
 		system("cls");
 
 		switch (input) {
-		case 'p': {player.test(); break; }
-		case 'e': {field.printField(); break; }
+		case 'p': {player.setCharaker(); player.test(); break; }
+		case 'e': {player.printField(); break; }
 		case 'i': {std::cout << "press: i" << std::endl; break; }
 		case 's': {settingMenu(); system("cls"); break; }
 		}

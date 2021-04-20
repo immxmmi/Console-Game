@@ -27,9 +27,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="te.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -44,11 +41,13 @@
     <ClInclude Include="Player.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="te.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -3,9 +3,7 @@
 #include <iostream>
 #include <conio.h>
 #include <time.h>
-#include "Field.h"
 #include "Level.h"
-#include "te.h"
 
 
 class Player:Level
@@ -30,6 +28,12 @@ private:
 	enum nav { STOP = 0, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
 
+	// ACTION
+	void action();
+	void input();
+	void Load();
+
+	// CONTROL
 	char getConUp();
 	char getConDown();
 	char getConRight();
@@ -38,22 +42,19 @@ private:
 	void setConDown();
 	void setConRight();
 	void setConLeft();
+
+	// PRINT MENU
 	void print_controlMenu();
-	void action();
-	void input();
-	void Load();
+	void print_charakterMenu();
 
 public:
 
 	Player();
-
 	void setHeight2();
 	void setWidth2();
 	void setControl();
+	void setCharaker();
+	void FIELD();
 	void test();
-
-
-
-
 };
 

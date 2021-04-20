@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Menu.h"
-#include "Player.h"
-#include "te.h"
 #include <assert.h>
 
 
@@ -16,6 +14,8 @@ int main() {
 
 	Menu navigation;
 	navigation.menu();
+
+
 
 
 	//play.setControl();
