@@ -11,7 +11,6 @@
 
 private:
 
-	std::string Name;
 	bool players;
 	char charakter;
 	int level;
@@ -23,8 +22,8 @@ private:
 	bool gameOver;
 	char cont_down;
 	char cont_up;
-	char cont_right;
 	char cont_left;
+	char cont_right;
 	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
 
@@ -53,6 +52,7 @@ private:
 
 
 
+	void rest();
 public:
 	Player();
 	void Settings(char input); // h --> height // --> w-->width // --> c-->control // --> p-->character
@@ -63,5 +63,6 @@ public:
 
 
 	void start();
+
 };
 

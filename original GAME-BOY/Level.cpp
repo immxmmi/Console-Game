@@ -42,8 +42,10 @@ void Level::Level1()
 }
 void Level::Level2()
 {
-	setWidth(30);
-	setHeight(30);
+	rand();
+	//this->setSpace(,'#')
+
+
 }
 void Level::Level3()
 {

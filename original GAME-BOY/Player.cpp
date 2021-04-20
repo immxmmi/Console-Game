@@ -2,7 +2,17 @@
 
 Player::Player() {
 
-	this->Name = "TEST";
+	this->rest();
+	this->cont_down  = 's';
+	this->cont_up    = 'w';
+	this->cont_right = 'd';
+	this->cont_left  = 'a';
+}
+
+
+
+
+void Player::rest() {
 	this->players = false;
 	this->charakter = (char)176;
 	this->level = 0;
@@ -11,24 +21,20 @@ Player::Player() {
 	this->y = this->getHeight() - 1;
 	this->score = 0;
 	this->scoreLimit = 200;
-	this->gameOver  = false;
-	this->cont_down  = 's';
-	this->cont_up    = 'w';
-	this->cont_right = 'd';
-	this->cont_left  = 'a';
+	this->gameOver = false;
 }
+
 void Player::action()
 {
 	switch (this->control)
 	{
-	case nav::LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control =  nav::STOP; break;
-	case nav::RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = nav::STOP; break;
-	case nav::UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control =	  nav::STOP; break;
-	case nav::DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control =  nav::STOP; break;
+		case nav::LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control =  nav::STOP; break;
+		case nav::RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = nav::STOP; break;
+		case nav::UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control =	  nav::STOP; break;
+		case nav::DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control =  nav::STOP; break;
 		default:break;
 	}
 	this->setSpace(this->x, this->y, this->charakter);
-	//if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver == true; }
 }
 void Player::input() {
 	if (_kbhit())
@@ -64,12 +70,11 @@ void Player::start()
 		this->input();
 		if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver = true; }
 	}
-	this->gameOver = false;
+	this->rest();
 	system("cls");
 }
 void Player::Load()
 {
-
 		system("cls");
 		this->drawField();
 		//this->Wall(1,2,4,1);
@@ -88,7 +93,6 @@ void Player::Settings(char input)
 		case 'p':this->setCharacter(1); break;
 	}
 }
-
 
 //##################### Charakter #######################\\
 
@@ -155,7 +159,7 @@ void Player::print_characterMenu(int player)
 };
 
 //###################### Control #######################\\
-
+// 
 // GETTER
 char Player::getConUp()
 {
