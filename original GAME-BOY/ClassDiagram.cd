@@ -1,14 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Menu">
-    <Position X="7.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAYAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAgEAAAA=</HashCode>
-      <FileName>Menu.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Player">
-    <Position X="1.25" Y="0.5" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <NestedTypes>
       <Enum Name="Player::nav" Collapsed="true">
         <TypeIdentifier>
@@ -21,39 +14,53 @@
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Field">
-    <Position X="9.5" Y="1" Width="1.5" />
+  <Class Name="Player2">
+    <Position X="8.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>RACABAAAQAIAAIQAQgBAEAAAAAIAQAAkAABUICAAggA=</HashCode>
-      <FileName>Field.h</FileName>
+      <HashCode>AAAIAAAAIAAAAEAAQAIAAAAAAACAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Player2.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Level">
-    <Position X="4.25" Y="1" Width="1.5" />
+  <Class Name="Player1">
+    <Position X="7.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAQBAAAAAAAAAAA=</HashCode>
-      <FileName>Level.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player1.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GAME" Collapsed="true">
-    <Position X="3.5" Y="4.25" Width="1.5" />
+  <Class Name="GAME">
+    <Position X="9" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GAME.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Test" Collapsed="true">
-    <Position X="4.25" Y="5.75" Width="1.5" />
+    <Position X="14.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Test.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Player2" Collapsed="true">
-    <Position X="12.25" Y="5.75" Width="1.5" />
+  <Class Name="Menu" Collapsed="true">
+    <Position X="14.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAIAAAAEAAQAIAAAAAAACAAAAAAABgAAAAAAA=</HashCode>
-      <FileName>Player2.h</FileName>
+      <HashCode>AAAAAAYAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAgEAAAA=</HashCode>
+      <FileName>Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Field" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RACABAAAQAIAAIQAQgBAEAAAAAIAQAAkAABUICAAggA=</HashCode>
+      <FileName>Field.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
