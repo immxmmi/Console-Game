@@ -25,7 +25,7 @@ private:
 	char cont_up;
 	char cont_right;
 	char cont_left;
-	enum nav { STOP = 0, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
+	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
 
 	// Generall

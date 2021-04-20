@@ -4,7 +4,7 @@ Player::Player() {
 
 	this->Name = "TEST";
 	this->players = false;
-	this->charakter = 176;
+	this->charakter = (char)176;
 	this->level = 0;
 	this->life = 0;
 	this->x = this->getX_edge();
@@ -21,10 +21,10 @@ void Player::action()
 {
 	switch (this->control)
 	{
-		case LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control = STOP; break;
-		case RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = STOP; break;
-		case UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control = STOP; break;
-		case DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control = STOP; break;
+	case nav::LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control =  nav::STOP; break;
+	case nav::RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = nav::STOP; break;
+	case nav::UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control =	  nav::STOP; break;
+	case nav::DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control =  nav::STOP; break;
 		default:break;
 	}
 	this->setSpace(this->x, this->y, this->charakter);
@@ -35,20 +35,20 @@ void Player::input() {
 	{
 		char input = _getch();
 		if (input == this->cont_left) {
-			this->control = LEFT;
+			this->control = nav::LEFT;
 			this->Load();
 		}
 		if (input == this->cont_right) {
-			this->control = RIGHT;
+			this->control = nav::RIGHT;
 			this->Load();
 
 		}
 		if (input == this->cont_up) {
-			this->control = UP;
+			this->control = nav::UP;
 			this->Load();
 		}
 		if (input == this->cont_down) {
-			this->control = DOWN;
+			this->control = nav::DOWN;
 			this->Load();
 		}
 		if (input == 'q') {
@@ -62,7 +62,7 @@ void Player::start()
 	this->Load();
 	while (this->gameOver != true) {
 		this->input();
-		if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver == true; }
+		if (this->y == this->getHeight() / 2 && this->x == this->getWidth()) { this->gameOver = true; }
 	}
 	this->gameOver = false;
 	system("cls");
@@ -82,10 +82,10 @@ void Player::Load()
 void Player::Settings(char input) 
 {
 	switch (input) {
-		case 'h' :this->setHeight(0);
-		case 'w' :this->setWidth(0);
-		case 'c' :this->setControl();
-		case 'p' :this->setCharacter(1);
+		case 'h':this->setHeight(0); break;
+		case 'w':this->setWidth(0); break;
+		case 'c':this->setControl(); break;
+		case 'p':this->setCharacter(1); break;
 	}
 }
 
@@ -93,13 +93,13 @@ void Player::Settings(char input)
 //##################### Charakter #######################\\
 
 void Player::setCharacter(int player){
-	char Charakter1 = 176;
-	char Charakter2 = 219;
-	char Charakter3 = 178;
-	char Charakter4 = 177;
-	char Charakter5 = 245;
-	char Charakter6 = 184;
-	char Charakter7 = 169;
+	char Charakter1 = (char)176;
+	char Charakter2 = (char)219;
+	char Charakter3 = (char)178;
+	char Charakter4 = (char)177;
+	char Charakter5 = (char)245;
+	char Charakter6 = (char)184;
+	char Charakter7 = (char)169;
 	char input = 'w';
 
 
@@ -125,13 +125,13 @@ void Player::setCharacter(int player){
 }
 void Player::print_characterMenu(int player)
 {
-	char Charakter1 = 176;
-	char Charakter2 = 219;
-	char Charakter3 = 178;
-	char Charakter4 = 177;
-	char Charakter5 = 245;
-	char Charakter6 = 184;
-	char Charakter7 = 169;
+	char Charakter1 = (char)176;
+	char Charakter2 = (char)219;
+	char Charakter3 = (char)178;
+	char Charakter4 = (char)177;
+	char Charakter5 = (char)245;
+	char Charakter6 = (char)184;
+	char Charakter7 = (char)169;
 
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << std::endl << std::endl << std::endl;
