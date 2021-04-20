@@ -1,9 +1,11 @@
 #include "Menu.h"
 #include "Player.h"
+#include "Player2.h"
 #include <iostream>
 
 
 Player player;
+Player2 player2;
 
 //PRINT  MENU############################
 void Menu::print_Menu()
@@ -93,7 +95,7 @@ void Menu::menu()
 
 		switch (input) {
 		case 'p': {player.start(); break; }
-		case 'e': { player.start(); break; }
+		case 'e': { player2.Settings('c'); break; }
 		case 'i': {std::cout << "press: i" << std::endl; break; }
 		case 's': {settingMenu(); system("cls"); break; }
 		}

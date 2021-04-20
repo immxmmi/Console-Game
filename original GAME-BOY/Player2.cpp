@@ -7,4 +7,6 @@ Player2::Player2()
 	this->cont_up = 'j';
 	this->cont_right = 'k';
 	this->cont_left = 'l';
+	this->x = 0;
+	this->y = 0;
 }

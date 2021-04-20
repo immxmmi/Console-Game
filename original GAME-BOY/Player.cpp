@@ -18,8 +18,6 @@ Player::Player() {
 	this->cont_left  = 'a';
 }
 
-
-
 void Player::action()
 {
 	switch (this->control)
@@ -32,7 +30,6 @@ void Player::action()
 	}
 	this->setSpace(this->x, this->y, this->charakter);
 }
-
 void Player::input() {
 	if (_kbhit())
 	{
@@ -61,7 +58,7 @@ void Player::input() {
 }
 void Player::start()
 {
-	setCharacter();
+	setCharacter(1);
 	this->Load();
 	while (this->gameOver != true) {
 		this->input();
@@ -89,7 +86,7 @@ void Player::Settings(char input)
 		case 'h' :this->setHeight(0);
 		case 'w' :this->setWidth(0);
 		case 'c' :this->setControl();
-		case 'p' :this->setCharacter();
+		case 'p' :this->setCharacter(1);
 	}
 }
 
@@ -99,7 +96,7 @@ void Player::Settings(char input)
 
 //##################### Charakter #######################\\
 
-void Player::setCharacter(){
+void Player::setCharacter(int player){
 	char Charakter1 = 176;
 	char Charakter2 = 219;
 	char Charakter3 = 178;
@@ -112,7 +109,7 @@ void Player::setCharacter(){
 
 	do {
 		system("cls");
-		this->print_characterMenu();
+		this->print_characterMenu(player);
 		std::cin >> input;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -130,7 +127,7 @@ void Player::setCharacter(){
 	} while (input != 'a' && input != 'b' && input != 'c' && input != 'd' && input != 'e' && input != 'f' && input != 'g' && input != 'q');
 
 }
-void Player::print_characterMenu()
+void Player::print_characterMenu(int player)
 {
 	char Charakter1 = 176;
 	char Charakter2 = 219;
@@ -143,7 +140,7 @@ void Player::print_characterMenu()
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << "					*************************************" << std::endl;
-	std::cout << "					**           CHARAKTER 1           **" << std::endl;
+	std::cout << "					**           CHARAKTER "<< player << "          **" << std::endl;
 	std::cout << "					*************************************" << std::endl;
 	std::cout << "					**                                 **" << std::endl;
 	std::cout << "					**       a ............... " << Charakter1 << "       **" << std::endl;

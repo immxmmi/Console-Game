@@ -29,7 +29,7 @@ private:
 	nav control;
 
 	// Generall
-	void setCharacter();
+	void setCharacter(int player);
 
 	// ACTION
 	void action();
@@ -50,7 +50,7 @@ private:
 
 	// PRINT MENU
 	void print_controlMenu();
-	void print_characterMenu();
+	void print_characterMenu(int player);
 
 
 public:

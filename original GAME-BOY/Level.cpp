@@ -39,19 +39,16 @@ void Level::Level1()
 	setWidth(30);
 	setHeight(30);
 }
-
 void Level::Level2()
 {
 	setWidth(30);
 	setHeight(30);
 }
-
 void Level::Level3()
 {
 	setWidth(30);
 	setHeight(30);
 }
-
 void Level::Level4()
 {
 	setWidth(24);
