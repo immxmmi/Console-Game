@@ -36,14 +36,14 @@ void Level::LevelMenu(int level)
 
 void Level::Level1()
 {
-	setWidth(10);
-	setHeight(10);
+	setWidth(30);
+	setHeight(30);
 }
 
 void Level::Level2()
 {
-	setWidth(20);
-	setHeight(20);
+	setWidth(30);
+	setHeight(30);
 }
 
 void Level::Level3()

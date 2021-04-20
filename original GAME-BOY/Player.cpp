@@ -11,34 +11,28 @@ Player::Player() {
 	this->y = this->getHeight() - 1;
 	this->score = 0;
 	this->scoreLimit = 200;
-	this->gameOver = false;
+	this->gameOver  = false;
+	this->cont_down  = 's';
+	this->cont_up    = 'w';
+	this->cont_right = 'd';
+	this->cont_left  = 'a';
 }
 
 
 
 void Player::action()
 {
-
 	switch (this->control)
 	{
-
-	case LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control = STOP; break;
-
-
-	case RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = STOP; break;
-
-
-	case UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control = STOP; break;
-
-	case DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control = STOP; break;
-
-	default:break;
+		case LEFT:if (this->getSpace(this->x - 1, this->y) != this->wall) { this->x--; }; control = STOP; break;
+		case RIGHT:if (this->getSpace(this->x + 1, this->y) != this->wall) { this->x++; }; control = STOP; break;
+		case UP:if (this->getSpace(this->x, this->y - 1) != this->wall) { this->y--; }; control = STOP; break;
+		case DOWN:if (this->getSpace(this->x, this->y + 1) != this->wall) { this->y++; }; control = STOP; break;
+		default:break;
 	}
-
 	this->setSpace(this->x, this->y, this->charakter);
-
-
 }
+
 void Player::input() {
 	if (_kbhit())
 	{
@@ -67,7 +61,7 @@ void Player::input() {
 }
 void Player::start()
 {
-	setCharaker();
+	setCharacter();
 	this->Load();
 	while (this->gameOver != true) {
 		this->input();
@@ -87,11 +81,16 @@ void Player::Load()
 	this->action();
 	this->printField();
 }
-void Player::setHeight2() {
-	this->setHeight(0);
-}
-void Player::setWidth2() {
-	this->setWidth(0);
+
+
+void Player::Settings(char input) 
+{
+	switch (input) {
+		case 'h' :this->setHeight(0);
+		case 'w' :this->setWidth(0);
+		case 'c' :this->setControl();
+		case 'p' :this->setCharacter();
+	}
 }
 
 
@@ -100,7 +99,7 @@ void Player::setWidth2() {
 
 //##################### Charakter #######################\\
 
-void Player::setCharaker(){
+void Player::setCharacter(){
 	char Charakter1 = 176;
 	char Charakter2 = 219;
 	char Charakter3 = 178;
@@ -113,7 +112,7 @@ void Player::setCharaker(){
 
 	do {
 		system("cls");
-		this->print_charakterMenu();
+		this->print_characterMenu();
 		std::cin >> input;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -131,7 +130,7 @@ void Player::setCharaker(){
 	} while (input != 'a' && input != 'b' && input != 'c' && input != 'd' && input != 'e' && input != 'f' && input != 'g' && input != 'q');
 
 }
-void Player::print_charakterMenu()
+void Player::print_characterMenu()
 {
 	char Charakter1 = 176;
 	char Charakter2 = 219;
@@ -159,8 +158,14 @@ void Player::print_charakterMenu()
 	std::cout << "					*              Momo                 *" << std::endl;
 	std::cout << "					*************************************" << std::endl;
 	std::cout << std::endl << std::endl;
-	std::cout << "Chose a charakter:";
+	std::cout << "Character:  ";
 };
+
+
+
+
+
+
 
 
 //###################### Control #######################\\

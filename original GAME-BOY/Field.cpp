@@ -15,6 +15,7 @@ void Field::drawField() {
 	for (int y = 0; y <= this->height; y++) {
 		for (int x = 0; x <= this->width; x++) {
 
+			// Draw SPACE
 			this->setSpace(x, y, ' ');
 
 			if (x < x_edge - 1) {

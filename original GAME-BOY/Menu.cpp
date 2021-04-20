@@ -72,9 +72,9 @@ void Menu::settingMenu() {
 		this->print_settingMenu();
 		input = this->getSettingInput();
 		switch (input) {
-		case 'c': {player.setControl(); break; }
-		case 'h': {player.setHeight2(); break; }
-		case 'w': {player.setWidth2(); break; }
+		case 'c': {player.Settings(input); break; }
+		case 'h': {player.Settings(input); break; }
+		case 'w': {player.Settings(input); break; }
 		}
 
 

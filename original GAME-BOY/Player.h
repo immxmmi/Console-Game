@@ -6,7 +6,7 @@
 #include "Level.h"
 
 
-class Player: public Level
+ class Player: public Level
 {
 
 private:
@@ -21,12 +21,15 @@ private:
 	int score;
 	int scoreLimit;
 	bool gameOver;
-	char cont_down = 's';
-	char cont_up = 'w';
-	char cont_right = 'd';
-	char cont_left = 'a';
+	char cont_down;
+	char cont_up;
+	char cont_right;
+	char cont_left;
 	enum nav { STOP = 0, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 	nav control;
+
+	// Generall
+	void setCharacter();
 
 	// ACTION
 	void action();
@@ -34,6 +37,7 @@ private:
 	void Load();
 
 	// CONTROL
+	void setControl();
 	char getConUp();
 	char getConDown();
 	char getConRight();
@@ -43,17 +47,15 @@ private:
 	void setConRight();
 	void setConLeft();
 
+
 	// PRINT MENU
 	void print_controlMenu();
-	void print_charakterMenu();
+	void print_characterMenu();
+
 
 public:
-
 	Player();
-	void setHeight2();
-	void setWidth2();
-	void setControl();
-	void setCharaker();
+	void Settings(char input); // h --> height // --> w-->width // --> c-->control // --> p-->character
 	void start();
 };
 
