@@ -6,7 +6,7 @@
 #include "Level.h"
 
 
-class Player:Level
+class Player: public Level
 {
 
 private:
@@ -54,7 +54,6 @@ public:
 	void setWidth2();
 	void setControl();
 	void setCharaker();
-	void FIELD();
-	void test();
+	void start();
 };
 

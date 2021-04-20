@@ -92,8 +92,8 @@ void Menu::menu()
 		system("cls");
 
 		switch (input) {
-		case 'p': {player.setCharaker(); player.test(); break; }
-		case 'e': {player.printField(); break; }
+		case 'p': {player.start(); break; }
+		case 'e': { player.start(); break; }
 		case 'i': {std::cout << "press: i" << std::endl; break; }
 		case 's': {settingMenu(); system("cls"); break; }
 		}
