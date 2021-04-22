@@ -3,42 +3,33 @@
 #include <iostream>
 #include <conio.h>
 #include <time.h>
-#include "Level.h"
 
-
- class Player//:Level
+class Player
 {
 
 private:
-
 	char cont_down;
 	char cont_up;
 	char cont_left;
 	char cont_right;
-
-	bool gameOver;
-
-
-
+	void rest();
 protected :
-
+	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
 
 public:
-	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
+	// Generall
+
 	nav control;
-	void rest();
-
-
-
+	
+	Player();
 	char charakter;
 	int level;
 	int life;
 	int x;
 	int y;
+	bool gameOver;
 
 
-	// Generall
-	Player();
 
 	// ACTION
 	void input();
@@ -60,8 +51,6 @@ public:
 	// PRINT MENU
 	void print_controlMenu(int player);
 	void print_characterMenu(int player);
-
-
 
 };
 

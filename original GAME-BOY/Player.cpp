@@ -11,14 +11,9 @@ void Player::rest() {
 	this->charakter = (char)176;
 	this->level = 0;
 	this->life = 0;
-	//this->x = this->getX_edge();
-	//this->y = this->getHeight() - 1;
 	this->x = 0;
 	this->y = 0;
-	this->gameOver = false;
 }
-
-
 
 
 void Player::input() {
@@ -47,14 +42,6 @@ void Player::input() {
 		}
 	}
 }
-
-
-
-
-
-
-
-
 
 
 

@@ -7,16 +7,10 @@ private:
 
 
 public:
-	Player2() {
-		this->rest();
-		this->setConUp(true, 'i');
-		this->setConDown(true, 'k');
-		this->setConLeft(true, 'j');
-		this->setConRight(true, 'l');
-	}
-
+	Player2();
 	
 
+	void defaultSetting();
 
 
 };

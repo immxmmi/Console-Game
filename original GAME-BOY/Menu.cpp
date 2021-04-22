@@ -107,9 +107,9 @@ void Menu::menu()
 		system("cls");
 
 		switch (input) {
-		case 'p': {game.start(); break; }
-		case 'e': {game.Settings('c'); break; }
-		case 'i': {game.start(); break; }
+		case 'p': {game.start(false); break; }
+		case 'e': {game.start(true); break; }
+		case 'i': {game.start(false); break; }
 		case 's': {settingMenu(); system("cls"); break; }
 		}
 
