@@ -17,7 +17,6 @@ private:
 	void action();
 
 	//LEVEL
-	void Level(int level);
 	int level;
 	
 
@@ -28,6 +27,8 @@ public:
 
 	//GAME START
 	void start(bool morePlayer);
+	void restartW();
+	void restartO();
 
 	//SETTINGS
 	void Settings(char input);

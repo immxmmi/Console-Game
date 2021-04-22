@@ -11,8 +11,33 @@ GAME::GAME() {
 	Player1::x = Level::getX_edge();
 	Player1::y = Level::getHeight() - 1;
 	Player2::x = Level::getX_edge();
-	Player2::y = Level::getHeight() - 2;
+	Player2::y = Level::getHeight() - 1;
 }
+
+
+void GAME::restartW()
+{
+	this->gameWin = false;
+	Player1::x = Level::getX_edge();
+	Player1::y = Level::getHeight() - 1;
+	Player2::x = Level::getX_edge();
+	Player2::y = Level::getHeight() - 1;
+}
+
+void GAME::restartO()
+{
+	this->gameOver = false;
+	this->gameWin = false;
+	this->morePlayer = false;
+	this->level = 1;
+
+	Player1::x = Level::getX_edge();
+	Player1::y = Level::getHeight() - 1;
+	Player2::x = Level::getX_edge();
+	Player2::y = Level::getHeight() - 1;
+}
+
+
 
 //GAME START
 void GAME::start(bool morePlayer)
@@ -28,14 +53,24 @@ void GAME::start(bool morePlayer)
 
 	this->Load();
 	while (this->gameOver != true) {
-		this->input();
-		if (Player1::y == Level::getHeight() / 2 && Player1::x == Level::getWidth()) { this->gameWin = true; this->gameOver = true; this->level++; }
-		if (this->morePlayer == true) {
-			if (Player2::y == Level::getHeight() / 2 && Player2::x == Level::getWidth()) { this->gameWin = true; this->level++; }
+		while (gameWin != true) {
+			this->input();
+			if (Player1::y == Level::getHeight() / 2 && Player1::x == Level::getWidth()) { this->gameWin = true;this->level++; }
+			if (this->morePlayer == true) {
+				if (Player2::y == Level::getHeight() / 2 && Player2::x == Level::getWidth()) { this->gameWin = true; this->level++; }
+			}
+
+			if (gameOver == true) {break;}
 		}
+		if (gameOver == true){break;}
+		else { this->restartW(); }
 	}
 
 }
+
+
+
+
 void GAME::action()
 {
 
@@ -122,7 +157,7 @@ void GAME::input() {
 
 			//RIGHT
 			if (input == Player2::getConRight()) {
-				Player1::control = Player2::nav::RIGHT;
+				Player2::control = Player2::nav::RIGHT;
 				this->Load();
 
 			}
@@ -131,21 +166,17 @@ void GAME::input() {
 
 		if (input == 'q') {
 			this->gameOver = true;
+			
 		}
 	}
 }
 void GAME::Load() {
 	system("cls");
-	Level::LevelMenu(1);
+	Level::LevelMenu(this->level);
 	this->action();
 	Level::printField();
 }
 
-//LEVEL
-void GAME::Level(int level)
-{
-	this->Level::LevelMenu(level);
-}
 
 // SETTINGS
 void GAME::Settings(char input)

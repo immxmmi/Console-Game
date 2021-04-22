@@ -1,6 +1,18 @@
 #include "Level.h"
 
-//Mauer
+//WALL
+
+//RANDOM GENERATOR 2000
+
+int Level::randGen2000(int max) {
+
+	srand((unsigned)time(NULL));
+	srand(time(NULL));
+	return rand() % max + 1;
+}
+
+
+
 void Level::Wall(int index, int index2, int space, int limit)
 {		
 			for (int i = 0; i < limit; i++) {
@@ -33,17 +45,30 @@ void Level::LevelMenu(int level)
 		default:break;
 	}
 }
+void Level::DrawLevel(int level) {
+	this->drawField();
+	std::cout << "LEVEL:" << level << std::endl;
+}
+
 void Level::Level1()
 {
-	//setWidth(30);
-	//setHeight(30);
-	this->drawField();
-	this->Wall(1,2,4,1);
-
+	DrawLevel(1);
+	this->Wall(1, 4, 4, 5);	
 }
 void Level::Level2()
 {
-	//this->setSpace(,'#')
+
+	DrawLevel(2);
+
+	if (this->levelStart == true) {
+		do {
+			this->space = this->randGen2000(6);
+		} while (this->space < 2);
+		this->limit = this->randGen2000(5);
+	}
+	
+	this->Wall(1, 2, this->space, this->limit);
+
 }
 void Level::Level3()
 {

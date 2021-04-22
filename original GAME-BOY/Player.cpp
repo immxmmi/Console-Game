@@ -2,10 +2,10 @@
 
 Player::Player() {
 	this->rest();
-	this->cont_down  = 's';
-	this->cont_up    = 'w';
-	this->cont_right = 'd';
-	this->cont_left  = 'a';
+	this->cont_down  = '0';
+	this->cont_up    = '0';
+	this->cont_right = '0';
+	this->cont_left  = '0';
 }
 void Player::rest() {
 	this->charakter = (char)176;
@@ -14,35 +14,6 @@ void Player::rest() {
 	this->x = 0;
 	this->y = 0;
 }
-
-
-void Player::input() {
-	if (_kbhit())
-	{
-		char input = _getch();
-		if (input == this->cont_left) {
-			this->control = nav::LEFT;
-			//this->Load();
-		}
-		if (input == this->cont_right) {
-			this->control = nav::RIGHT;
-			//this->Load();
-
-		}
-		if (input == this->cont_up) {
-			this->control = nav::UP;
-			//this->Load();
-		}
-		if (input == this->cont_down) {
-			this->control = nav::DOWN;
-			//this->Load();
-		}
-		if (input == 'q') {
-			this->gameOver = true;
-		}
-	}
-}
-
 
 
 //##################### Charakter #######################\\
@@ -167,7 +138,7 @@ void Player::setConDown(bool defaultSetting, char key) {
 	} while (input == 'q' || input == this->getConUp() || input == this->getConLeft() || input == this->getConRight());
 	this->cont_down = input;
 	}
-	else(this->cont_up = key);
+	else(this->cont_down = key);
 }
 void Player::setConRight(bool defaultSetting, char key) {
 	char input;
@@ -181,7 +152,7 @@ void Player::setConRight(bool defaultSetting, char key) {
 	} while (input == 'q' || input == this->getConDown() || input == this->getConLeft() || input == this->getConUp());
 	this->cont_right = input;
 	}
-	else(this->cont_up = key);
+	else(this->cont_right = key);
 }
 void Player::setConLeft(bool defaultSetting, char key) {
 	char input;
@@ -195,7 +166,7 @@ void Player::setConLeft(bool defaultSetting, char key) {
 	} while (input == 'q' || input == this->getConDown() || input == this->getConUp() || input == this->getConRight());
 	this->cont_left = input;
 	}
-	else(this->cont_up = key);
+	else(this->cont_left = key);
 }
 
 

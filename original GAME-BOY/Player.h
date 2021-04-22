@@ -31,9 +31,6 @@ public:
 
 
 
-	// ACTION
-	void input();
-
 	// CONTROL
 	char getConUp();
 	char getConDown();
