@@ -6,63 +6,62 @@
 #include "Level.h"
 
 
- class Player: public Level
+ class Player//:Level
 {
 
 private:
 
-	bool players;
+	char cont_down;
+	char cont_up;
+	char cont_left;
+	char cont_right;
+
+	bool gameOver;
+
+
+
+protected :
+
+
+public:
+	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
+	nav control;
+	void rest();
+
+
+
 	char charakter;
 	int level;
 	int life;
 	int x;
 	int y;
-	int score;
-	int scoreLimit;
-	bool gameOver;
-	char cont_down;
-	char cont_up;
-	char cont_left;
-	char cont_right;
-	enum class nav { STOP, LEFT, RIGHT, UP, DOWN }; // NAVIGATION 
-	nav control;
+
 
 	// Generall
-	
+	Player();
 
 	// ACTION
-	void action();
 	void input();
-	void Load();
 
 	// CONTROL
-
 	char getConUp();
 	char getConDown();
 	char getConRight();
 	char getConLeft();
-	void setConUp();
-	void setConDown();
-	void setConRight();
-	void setConLeft();
+	void setConUp(bool defaultSetting, char key);
+	void setConDown(bool defaultSetting, char key);
+	void setConRight(bool defaultSetting, char key);
+	void setConLeft(bool defaultSetting, char key);
+	void setControl(int player);
 
+	// CHARACTER
+	void setCharacter(int player);
 
 	// PRINT MENU
-	void print_controlMenu();
-
-
-
-	void rest();
-public:
-	Player();
-	void Settings(char input); // h --> height // --> w-->width // --> c-->control // --> p-->character
-	
+	void print_controlMenu(int player);
 	void print_characterMenu(int player);
-	void setCharacter(int player);
-	void setControl();
 
 
-	void start();
 
 };
 

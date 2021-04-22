@@ -1,11 +1,12 @@
 #include "Menu.h"
 #include "Player.h"
 #include "Player2.h"
+#include "Player1.h"
+#include "GAME.h"
 #include <iostream>
 
 
-Player player;
-Player2 player2;
+GAME game;
 
 //PRINT  MENU############################
 void Menu::print_Menu()
@@ -34,9 +35,18 @@ void Menu::print_settingMenu()
 	std::cout << "					**             SETTING             **" << std::endl;
 	std::cout << "					*************************************" << std::endl;
 	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					**    Player1:                     **" << std::endl;
+	std::cout << "					**    a ................ CONTROL   **" << std::endl;
+	std::cout << "					**    b ................ CHARAKTER **" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					**    Player2:                     **" << std::endl;
 	std::cout << "					**    c ................ CONTROL   **" << std::endl;
-	std::cout << "					**    h ................  HEIGHT   **" << std::endl;
-	std::cout << "					**    w .................  WIDTH   **" << std::endl;
+	std::cout << "					**    d ................ CHARAKTER **" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
+	std::cout << "					**    WINDOW:                      **" << std::endl;
+	std::cout << "					**    e ................  HEIGHT   **" << std::endl;
+	std::cout << "					**    f .................  WIDTH   **" << std::endl;
+	std::cout << "					**                                 **" << std::endl;
 	std::cout << "					**    q ..................  BACK   **" << std::endl;
 	std::cout << "					**                                 **" << std::endl;
 	std::cout << "					*************************************" << std::endl;
@@ -52,7 +62,7 @@ char Menu::getSettingInput() {
 		std::cin >> input;
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	} while (input != 'h' && input != 'w' && input != 'c' && input != 'q');
+	} while (input != 'a' && input != 'b' && input != 'c' && input != 'd' && input != 'e' && input != 'f' && input != 'q');
 	return input;
 }
 char Menu::getMenuInput() {
@@ -74,9 +84,12 @@ void Menu::settingMenu() {
 		this->print_settingMenu();
 		input = this->getSettingInput();
 		switch (input) {
-		case 'c': {player.Settings(input); break; }
-		case 'h': {player.Settings(input); break; }
-		case 'w': {player.Settings(input); break; }
+		case 'a': {game.Settings(input); break; }
+		case 'b': {game.Settings(input); break; }
+		case 'c': {game.Settings(input); break; }
+		case 'd': {game.Settings(input); break; }
+		case 'e': {game.Settings(input); break; }
+		case 'f': {game.Settings(input); break; }
 		}
 
 
@@ -94,9 +107,9 @@ void Menu::menu()
 		system("cls");
 
 		switch (input) {
-		case 'p': {player.start(); break; }
-		case 'e': { player2.Settings('c'); break; }
-		case 'i': {std::cout << "press: i" << std::endl; break; }
+		case 'p': {game.start(); break; }
+		case 'e': {game.Settings('c'); break; }
+		case 'i': {game.start(); break; }
 		case 's': {settingMenu(); system("cls"); break; }
 		}
 

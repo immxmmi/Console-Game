@@ -1,5 +1,6 @@
 #include "Level.h"
 
+//Mauer
 void Level::Wall(int index, int index2, int space, int limit)
 {		
 			for (int i = 0; i < limit; i++) {
@@ -20,9 +21,9 @@ void Level::Wall(int index, int index2, int space, int limit)
 				index2 += space;
 			}
 		}
-
 void Level::LevelMenu(int level)
 {
+
 	switch (level)
 	{
 		case 1: Level1(); break;
@@ -32,20 +33,17 @@ void Level::LevelMenu(int level)
 		default:break;
 	}
 }
-
 void Level::Level1()
 {
 	//setWidth(30);
 	//setHeight(30);
+	this->drawField();
 	this->Wall(1,2,4,1);
 
 }
 void Level::Level2()
 {
-	rand();
 	//this->setSpace(,'#')
-
-
 }
 void Level::Level3()
 {

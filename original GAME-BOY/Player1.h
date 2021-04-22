@@ -2,11 +2,18 @@
 #include "Player.h"
 class Player1 : public Player
 {
-private:
-public:
-	void test2() {
-		this->Settings('c');
-	}
+	private:
+	public:
+		//Default
+		Player1() {
+			this->rest();
+	
+			this->setConDown(true,'s');
+			this->setConLeft(true, 'a');
+			this->setConRight(true,'d');
+			this->setConUp(true, 'w');
+		}
+
 
 
 };

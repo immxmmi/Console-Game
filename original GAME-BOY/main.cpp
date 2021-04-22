@@ -15,9 +15,19 @@ int main() {
 	Menu navigation;
 	navigation.menu();
 
+	//AME play;
+//	Player1 play1;
+
+	//Player2 play2;
 
 
 
+
+
+	//play1.los();
+	//play.start();
+
+	
 	//play.setControl();
 
 	//te test;
